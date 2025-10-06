@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "lilac",
+  "id": "daisy",
   "version": "${version}",
-  "name": "Lilac",
+  "name": "Daisy",
   "description": "Cao awa's mod library",
   "authors": [
     "cao_awa"
@@ -11,16 +11,16 @@
     "homepage": ""
   },
   "license": "GPL-3.0",
-  "icon": "assets/lilac/icon.png",
+  "icon": "assets/daisy/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.cao.awa.lilac.fabric.LilacFabric"
+      "com.github.cao.awa.daisy.fabric.DaisyFabric"
     ]
   },
   "depends": {
     "fabricloader": ">=0.17.2",
-    "minecraft": ">=1.21",
+    "minecraft": "*",
     "java": ">=21"
   }
 }

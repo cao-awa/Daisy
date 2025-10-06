@@ -7,7 +7,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'lilac'
+rootProject.name = 'daisy'
 
 include 'common'
 include 'fabric'

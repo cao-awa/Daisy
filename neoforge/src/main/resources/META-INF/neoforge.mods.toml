@@ -4,23 +4,23 @@ loaderVersion = "[2,)"
 license = "GNU GPL 3.0"
 
 [[mods]]
-modId = "lilac"
+modId = "daisy"
 version = "${version}"
-displayName = "Lilac"
+displayName = "Daisy"
 authors = ""
 description = '''
 
 '''
 #logoFile = ""
 
-[[dependencies.lilac]]
+[[dependencies.daisy]]
 modId = "neoforge"
 type = "required"
 versionRange = "[21,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.lilac]]
+[[dependencies.daisy]]
 modId = "minecraft"
 type = "required"
 versionRange = "[1.21,)"
