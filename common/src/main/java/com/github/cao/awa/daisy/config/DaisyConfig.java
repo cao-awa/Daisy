@@ -18,7 +18,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Consumer;
 
 public class DaisyConfig {
@@ -36,6 +35,11 @@ public class DaisyConfig {
 
     public <X> void register(String key, X defaultValue) {
         this.configKeys.put(key, DaisyConfigKey.create(key, defaultValue));
+    }
+
+    @SuppressWarnings("unchecked")
+    public <X> void register(DaisyConfigKey<X> configKey) {
+        this.configKeys.put(configKey.name(), (DaisyConfigKey<Object>) configKey);
     }
 
     public <X> void setConfig(DaisyConfigKey<X> configKey, X value) {
@@ -150,10 +154,12 @@ public class DaisyConfig {
         });
     }
 
-    public Set<DaisyConfigKey<?>> collect() {
-        Set<DaisyConfigKey<?>> configs = CollectionFactor.hashSet();
+    public Map<String, ?> collect() {
+        Map<String, Object> configs = CollectionFactor.hashMap();
 
-        configs.addAll(this.configKeys.values());
+        this.configKeys.forEach((key, value) -> {
+            configs.put(key, getConfig(value));
+        });
 
         return configs;
     }
